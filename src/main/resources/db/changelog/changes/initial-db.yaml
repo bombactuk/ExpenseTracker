@@ -91,3 +91,23 @@ databaseChangeLog:
               - column:
                   name: name
                   value: "ROLE_ADMIN"
+  # 005-create-invoices-table
+  - changeSet:
+      id: create-invoices-table
+      author: Egor Levshunov
+      changes:
+        - createTable:
+            tableName: invoices
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
